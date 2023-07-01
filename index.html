@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Metanoia</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  
+    <header>
+        
+        <img src="images/icon.png.png" width="85" class="d-inline-block align-middle mr-2"> 
+        
+
+        <nav class="navbar">
+            <ul>
+                <li><a href="#home" class="active">Inicio</a></li>
+                <li><a href="#product" >Típs</a></li>
+                <li><a href="#about" >Nosotras</a></li>
+               
+                <li><a href="#review" >Equipo</a></li>
+                <li><a href="#contact" >Contacto</a></li>
+            </ul>
+            
+        </nav>
+        <div class="fas fa-bars"></div>
+    </header>
+
+    <section class="home" id="home">
+        <div class="content">
+            <h1>Emancipación</h1>
+            <p>Se denomina la liberación de cualquier clase de vínculo de subordinación o dependencia de una cosa frente a otra. 
+                La palabra, como tal, proviene del latín emancipatĭo , emancipatiōnis..</p>
+            <a href="https://www.significados.com/emancipacion/" target="_blank"><button>Descubre más</button></a>
+        </div>
+    </section>
+
+
+    <section class="product" id="product">
+
+        <div class="box-container">
+
+            <div class="box">
+                <i class="fa fa-users"></i>
+                <h3>Tip 1</h3>
+                <p>Los padres hacen parte fundamental dentro de este proceso, se requiere del aval y autorización de estos. </p>
+            </div>
+
+            <div class="box">
+                <i class="fa fa-user"></i>
+                <h3>Tip 2</h3>
+                <p>Quien requiera la emancipación debe ser menor de 18 años, debe demostrarlo por medio de su registro civil de nacimiento..</p>
+            </div>
+
+            <div class="box">
+                <i class="fa fa-universal-access"></i>
+                <h3>Tip 3</h3>
+                <p>Se debe contar con un sustento económico el cual le permita vivir dignamente sin requerir de la ayuda de los padres, 
+                    porque a partir de que se autorice la emancipación</p>
+            </div>
+
+        </div>
+
+        <a href="https://tusabogadosycontadores.co/blog/emancipacion-colombia/" target="_blank"><button>Ver más</button></a>
+
+    </section>
+
+
+    <section class="about" id="about">
+
+        <h1 class="heading">Nosotras</h1>
+        
+        <div class="row">
+            <div class="image">
+                <img src="images/1x/logo.png.png" alt="">
+            </div>
+            <div class="content">
+                <h3>Manual de marca</h3>
+                <p>Aquí podras observar nuestro manual de marca</p>
+                <a class="text-light btn color-nav4 btn-lg" href="images/Manual de marca. Metanoia.pdf" target="_blank"><button>Leer más</button></a>
+            </div>
+        </div>
+
+    </section>
+
+    <
+
+    <section class="review" id="review">
+
+        <h1 class="headnig"></h1>
+        <h3 class="title">Equipo de trabajo</h3>
+
+        <div class="box-container">
+            <div class="box">
+                <img src="images/cami.jpg.jpg" alt="">
+                <h3>Laura Camila Parra</h3>
+                <p>Programadora, editora, ilustradora e directora.</p>
+                <div class="stars">
+                   
+                </div>
+            </div>
+            <div class="box">
+                <img src="images/mafe.jpg.jpg" alt="">
+                <h3>Maria Fernanda Cornelio</h3>
+                <p>Editora, productora, sonidista e animador.</p>
+                <div class="stars">
+                   
+                </div>
+            </div>
+            
+        </div>
+
+    </section>
+
+    <section class="contact" id="contact">
+
+        <h1 class="heading">Contacto</h1>
+        
+        <div class="row">
+            <div class="form-container">
+
+                <form action="">
+                    <input type="text" placeholder="Nombre">
+                    <input type="email" placeholder="Correo">
+                    <input type="number" placeholder="Telefono">
+                    <textarea cols="15" rows="5" placeholder="Mensaje"></textarea >
+                    <input type="submit"  > <a href=""></a> 
+                </form>
+
+            </div>
+        </div>
+
+    </section>
+
+    <section class="footer">
+
+        <div class="icons">
+            <a href="https://web.facebook.com/profile.php?id=100094202469073" target="_blank"class="fab fa-facebook-f"></a>
+            <a href="https://instagram.com/metan.off?igshid=ZDc4ODBmNjlmNQ=="target="_blank" class="fab fa-instagram"></a>
+            <a href="https://www.tiktok.com/@metan.off0/video/7249787702583774469?is_from_webapp=1&sender_device=pc&web_id=7249367973176919557" class="fa fa-mobile"></a>
+        </div>
+
+    </section>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <script>
+
+        $(document).ready(function() {
+
+            $('.fa-bars').click(function() {
+
+                $(this).toggleClass('fa-times');
+                $('.navbar').toggleClass('nav-toggle');
+
+            });
+
+            $(window).on('scroll load', function() {
+
+                $('.fa-bars').removeClass('fa-times');
+                $('.navbar').removeClass('nav-toggle');
+
+                $('section').each(function() {
+
+                    var id = $(this).attr('id');
+                    var height = $(this).height();
+                    var offset = $(this).offset().top -200;
+                    var top = $(window).scrollTop();
+
+                    if(top >= offset && top < offset + height) {
+                        $('.navbar ul li a').removeClass('active');
+                        $('.navbar').find('[href="#'+id+'"]').addClass('active');
+                    }
+
+                });
+
+            });
+
+        });
+
+    </script>
+    
+    
+</body>
+</html>
